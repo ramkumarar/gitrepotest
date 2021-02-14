@@ -5,77 +5,114 @@ hide circle
 
 ' avoid problems with angled crows feet
 skinparam linetype ortho
+ 
 
-entity "event-type" as et01 {
+
+entity "event-type" as et01 #CornSilk {
   *id : number <<generated>>  --
   *name : text
   expire_time_minutes: number
   description : text
-  created_by: text
   created_at: timestamp
   updated_at: timestamp
 }
 
-entity "channel-type" as et02 {
+entity "message-subscription-type" as et02 #CornSilk {
+
   *id : number <<generated>>  --
   *name : text
   active: boolean
   description : text
-  created_by: text
   created_at: timestamp
   updated_at: timestamp
 }
 
 
-entity "message-template" as et03 {
+entity "message-template" as et03 #CornSilk{
   *id : number <<generated>>  --
-  type: text
+  message-template-type-id: number <<FK>>
   template-format : blob
   version: number
   description : text
-  created_by: text
   created_at: timestamp
   updated_at: timestamp
 }
 
-entity "event" as e01 {
+entity "channel-type" as et04 #CornSilk {
+  *id : number <<generated>>  --
+  *name : text
+  description : text
+  created_at: timestamp
+  updated_at: timestamp
+}
+
+entity "preference-type" as et05 #CornSilk {
+  *id : number <<generated>>  --
+  *name : text
+  *allowed-values : text
+  *default-value : text
+  description : text
+  created_at: timestamp
+  updated_at: timestamp
+}
+
+entity "message-template-type" as et06 #CornSilk {
+  *id : number <<generated>>  --
+  *type-name : text
+  description : text
+  created_at: timestamp
+  updated_at: timestamp
+}
+
+entity "event" as e01 #LightSkyBlue{
   *id : number <<generated>>  --
   *event_type_id : number <<FK>>
   entity_id: text
   entity_attributes : blob
-  actor_id: text
+  event-raised-by: text
   priority: int
   created_at: timestamp
   updated_at: timestamp
 }
 
-entity "event-subscriber" as e02 {
+entity "event-subscriber" as e02 #LightSkyBlue{
   *id : number <<generated>>  
   *event_id : text --
   *event_subscriber_id : text <<FK>>
 }
 
-entity "user-channel-preference" as e03 {
+entity "user-preference" as e03 #LightSkyBlue{
   *id : number <<generated>>  
   *composite-user-id: text
-  *channel_id : text <<FK>>
+  *channel-type-id: number  <<FK>>
    user-settings: blob
    created_at: timestamp
   updated_at: timestamp
 }
 
-entity "event-message-template" as e04 {
+entity "event-message-template" as e04 #CornSilk{
   *id : number <<generated>>  
   *event_type_id : number <<FK>>
   *message_template_id : number <<FK>>
-  *channel_type_id : number <<FK>>
+  *message_subscription_type_id : number <<FK>>
 }
 
-entity "event-message-queue" as e05 {
+entity "event-message-queue" as e05 #LightSkyBlue{
   *id : number <<generated>>  
   *event_id : number <<FK>>
   *channel_type_id : number <<FK>>
   *event_text : text
+  created_at: timestamp
+  updated_at: timestamp
+}
+
+entity "device" as e06 #LightSkyBlue{
+  *id : number <<generated>>  
+  *composite-user-id: <<FK>>
+  *channel_tye_id <<FK>>
+  *device_id : text
+  deviceType: text
+  active: bool
   created_at: timestamp
   updated_at: timestamp
 }
@@ -85,12 +122,15 @@ entity "event-message-queue" as e05 {
 
 et01 ||..o{ e01
 e01 ||..o{ e02
-e03 }|--|{ et02
 e02 ||..|| e03
 e04 ||..|| et03
 et02 ||..|{ e04
 et01 ||..|{ e04
 e01 ||..|| e05
+e03 ||..|| et04
+e05 ||..|{ e02
+et06 ||..|| et03
+
 
 
 
