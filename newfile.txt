@@ -4,4 +4,3 @@ four
 five
 six
 
-https://consent.ulsterbank.co.uk/corporate-consent?&response_type=token&REF=967F7C842D3536623EF97046D6ECB1F9F2C04335AC1B6369DB1D00000002
