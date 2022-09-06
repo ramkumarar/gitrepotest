@@ -1,9 +1,2 @@
-Hello World
-
-update file
-
-change 3
-change 4
-change 5
-change 6
-
+FROM centos:7 
+RUN yum install -y postgresql-libs.x86_64 postgresql.x86_64 
