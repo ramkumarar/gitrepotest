@@ -1,0 +1,68 @@
+# OKRs: Daily Deployments, Monthly Releases & M-Shaped Developer Upskilling
+
+**Period:** [Q3/Q4 2026 or specify your quarter]  
+**Owner:** [Your Name/Team]  
+**Themes:** Daily Deployment Frequency | Monthly Customer Releases | Learning & Upskilling to M-Shaped Developer
+
+---
+
+## Theme 1: Daily Deployment Frequency
+
+**Objective:**  
+Achieve reliable, high-frequency daily deployments through automation, modernization, and hands-off operations in a PaaS environment.
+
+**Key Results:**
+- Increase average deployment frequency to **≥1 production deployment per day** (measured across all applications).
+- Containerize **100%** of workloads and align them to the target hosting strategy.
+- Implement fully automated GitOps-based secret management, certificate creation, deployment, and rotation using Venafi + Vault (target: zero manual intervention).
+- Autonomously upgrade minor/patch versions of dependencies and apply security patches with automated validation and rollback (target: ≥95% success rate without manual fixes).
+- Reduce vulnerability count across application components and dependencies to **low single digits (≤5 critical/high)** and maintain it.
+- Improve test execution time by **≥40%** (baseline to be set in Q1).
+
+---
+
+## Theme 2: Monthly Customer Releases
+
+**Objective:**  
+Deliver predictable, high-quality monthly releases to customers with minimal risk and maximum automation.
+
+**Key Results:**
+- Achieve **≥1 production customer release per month** for in-scope applications with zero critical post-release incidents.
+- Establish end-to-end automated release pipelines (building on daily deployment capability) that support monthly customer-facing releases.
+- Implement necessary enablers and migration patterns to uplift legacy platforms (e.g., WebSphere ND → Liberty) to support modern release cadences.
+- Achieve **≥90%** automated test coverage for release qualification (unit + integration + regression).
+- Reduce average lead time from code complete to customer release by **≥50%**.
+
+---
+
+## Theme 3: Learning & Upskilling to Become an M-Shaped Developer
+
+**Objective:**  
+Evolve into versatile M-shaped engineers through continuous learning, knowledge sharing, and adoption of modern engineering practices.
+
+**Key Results:**
+- Build and maintain an **efficient, living knowledge repository** for each platform containing product, functional, design, and engineering references (in collaboration with BAs and designers). Target: 100% platforms covered with ≥80% content completeness score.
+- Contribute meaningfully to **bank-wide skills** initiatives (e.g., run ≥2 internal sessions/workshops per quarter, create reusable assets).
+- Actively use **agentic AI tools** as a core part of the learning process (target: document and share ≥12 AI-augmented learning outcomes or automations per quarter).
+- Adopt **Loop Engineering practices** for autonomous work (e.g., inner/outer loop, platform engineering, self-service capabilities). Target: ≥70% of daily work following these practices.
+- Complete targeted upskilling in at least **2 new complementary skill areas** (e.g., platform engineering + AI engineering, cloud-native + security, etc.) and demonstrate application in deliverables.
+
+---
+
+## Cross-Cutting Enablers (Supporting All Themes)
+
+- Full containerization aligned to hosting strategy.
+- Autonomous vulnerability & dependency management.
+- GitOps + secret/cert automation.
+- Legacy platform uplift (WebSphere etc.).
+- Knowledge repo as single source of truth.
+
+---
+
+**Next Steps / Notes:**
+- Set baselines and tracking mechanisms.
+- Review progress bi-weekly.
+- Adjust targets based on current maturity levels of applications.
+
+---
+*Generated on: July 2026*  
